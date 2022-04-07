@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+  
+  <title>Rating Component</title>
+  <style>
+    body{
+      min-width: 100vw;
+      min-height: 100vh;
+      margin:0;
+      padding:0;
+      box-sizing: border-box;
+      color:white;
+      font-family: 'Overpass', sans-serif;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background-color: black;
+    }
+
+
+    .star-box{
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background-color:hsl(213, 19%, 18%);
+      box-shadow: 0 0 50px black;
+    }
+    .number{
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background-color:hsl(213, 19%, 18%);
+      color:hsl(216, 12%, 54%);
+      font-size: 10px;
+      font-weight: 700;
+    }
+    .number:hover{
+      box-shadow: 0 0 50px black;
+      background-color: hsl(25, 97%, 53%);
+      color:white;
+    }
+    .number:active{
+      color:white;
+      background-color: hsl(216, 12%, 54%);
+    }
+    .star-icon{
+      transform: scale(0.7);
+    }
+    .title{
+      font-size: 20px;
+      margin-bottom: 0px;
+      font-weight: 700;
+    }
+    .text{
+      margin-top: 8px;
+      font-size: 11px;
+      margin-bottom: 24px;
+      color:hsl(216, 12%, 54%);
+    }
+    .rating-component{
+      border-radius:15px;
+      width: 230px;
+      margin:0 auto;
+      background: linear-gradient(15deg, hsl(216, 12%, 8%), hsl(210, 19%, 11%));
+      padding: 25px;
+    }
+    button{
+      width: 100%;
+      background-color: hsl(25, 97%, 53%);
+      height: 35px;
+      border-radius: 20px;
+      color:white;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 1px;
+      outline:none;
+      border:none;
+    }
+    button:hover{
+      background-color: white;
+      color: hsl(25, 97%, 53%);
+      transition: all 0.2s;
+    }
+    .title{
+      color:white;
+    }
+    .container-rat{
+      width: 100%;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      margin-bottom: 25px;
+    }
+  </style>
+</head>
+<body>
+  <div class="rating-component">
+    <div class="star-box">
+      <svg class="star-icon" width="17" height="16" xmlns="http://www.w3.org/2000/svg"><path d="m9.067.43 1.99 4.031c.112.228.33.386.58.422l4.45.647a.772.772 0 0 1 .427 1.316l-3.22 3.138a.773.773 0 0 0-.222.683l.76 4.431a.772.772 0 0 1-1.12.813l-3.98-2.092a.773.773 0 0 0-.718 0l-3.98 2.092a.772.772 0 0 1-1.119-.813l.76-4.431a.77.77 0 0 0-.222-.683L.233 6.846A.772.772 0 0 1 .661 5.53l4.449-.647a.772.772 0 0 0 .58-.422L7.68.43a.774.774 0 0 1 1.387 0Z" fill="#FC7614"/></svg>
+    </div>
+    <p class="title">
+      How did we do?
+    </p>
+    <p class="text">
+      Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!
+    </p>
+    <div class="container-rat">
+    <span class="number">1</span>
+    <span class="number">2</span>
+    <span class="number">3</span>
+    <span class="number">4</span>
+    <span class="number">5</span>
+  </div>
+    <button type="submit">submit</button>
+  </div>
+</body>
+</html>
