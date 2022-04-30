@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    /><link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/62ed3df0f6.js" crossorigin="anonymous"></script>
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Animated Search Box</title>
+    <!-- css -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins',sans-serif;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #664aff;
+        }
+        .search-box{
+            position: relative;
+            height: 60px;
+            width: 60px;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .search-box input{
+            height: 100%;
+            width: 100%;
+            border:none;
+            outline: none;
+            background: #fff;
+            font-size: 18px;
+            border-radius: 50px;
+            padding: 0 60px 0 20px;
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .search-box input.active{
+            opacity: 1;
+        }
+        .search-box .search-btn{
+            position: absolute;
+            top: 50%;
+            right:0px;
+            z-index: 1;
+            transform: translateY(-50%);
+            height: 60px;
+            width: 60px;
+            color: #664aff;
+            background: #fff;
+            line-height: 65px;
+            font-size: 22px;
+            text-align: center;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .search-box .search-btn.active{
+            right: 5px;
+            height: 50px;
+            width: 50px;
+            color: #fff;
+            background: #664aff;
+            line-height: 55px;
+            font-weight: 600;
+            font-size: 20px;
+            transform: translateY(-50%) rotate(360deg);
+        }
+        .search-box .close-btn{
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            right: 20px;
+            color: #fff;
+            font-size: 25px;
+            cursor: pointer;
+            transition: all 0.5s 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }        
+        .search-box .close-btn.active{
+            right:-40px;
+            transform: translateY(-50%) rotate(360deg);
+        }
+        .search-box.active{
+            width: 350px;
+        }
+        .search-txt{
+            margin-top: 15px;
+            color: #fff;
+            padding: 7px;
+            font-size: 18px;
+            text-align: center;
+            word-wrap: break-word;
+        }
+        .search-txt.active{
+            display: none;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="search-box">
+        <input type="text" placeholder="Type to search...">
+        <div class="search-btn">
+            <i class='bx bx-search'></i>
+        </div>
+        <div class="close-btn">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="search-txt"></div>
+    </div>
+    <!-- javascript -->
+      <script>
+          const searchBtn = document.querySelector('.search-btn');
+          const cancelBtn = document.querySelector('.close-btn');
+          const searchInput = document.querySelector('input');
+          const searchBox = document.querySelector('.search-box');
+          const searchData = document.querySelector('.search-txt');
+        //   const searchBtn = document.querySelector('.search-btn');
+        //   const searchBtn = document.querySelector('.search-btn');
+          searchBtn.addEventListener('click', () => {
+              searchBox.classList.add('active');
+              searchInput.classList.add('active');
+              searchBtn.classList.add('active');
+              cancelBtn.classList.add('active');
+              if(searchInput.value !== ""){
+                searchData.classList.remove('active');  
+                searchData.innerHTML = `You just typed <span style= "font-weight:700;"> ${searchInput.value} </span>`;
+              }
+              else{
+                searchData.innerHTML = "";
+              }
+          });
+          
+          cancelBtn.addEventListener('click', () => {
+              searchBox.classList.remove('active');
+              searchInput.classList.remove('active');
+              searchBtn.classList.remove('active');
+              cancelBtn.classList.remove('active');
+              searchData.classList.add('active'); 
+              searchInput.value ="";
+          });
+      </script>
+  </body>
+</html>
