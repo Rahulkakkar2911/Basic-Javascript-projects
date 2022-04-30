@@ -1,0 +1,40 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background:linear-gradient(#111317 50%, #675AFE 50%);
+}
+.container{
+    background-color: azure;
+    padding:30px 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+.container h2{
+    color: #675AFE;
+    font-size: 46px;
+    margin-right: 35px;
+}
+.container .logos{
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+.fa.fa-safari{
+    font-size: 43px;
+}
+.logos i{
+    margin-right: 8px;
+    opacity: 0.3;
+    transition:opacity 0.5s ease;
+}
