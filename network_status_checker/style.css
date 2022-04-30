@@ -9,10 +9,38 @@ body{
 }
 .container{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 20px;
+    left: 20px;
     box-shadow: 1px 7px 14px -5px rgba(0, 0, 0, 0.215);
+    animation: show_toast 1s ease forwards;
+}
+
+.container.hide{
+    animation: hide_toast 1s ease forwards;
+}
+@keyframes hide_toast {
+    0%{
+        transform: translateX(20px);
+    }
+    40%{
+        transform: translateX(-10%);
+    }
+    80%, 100%{
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(-100%);
+    }
+}
+@keyframes show_toast {
+    0%{
+        transform: translateX(-100%);
+    }
+    40%{
+        transform: translateX(-10%);
+    }
+    80%, 100%{
+        transform: translateX(20px);
+    }
 }
 .container .toast{
     background-color: #fff;
@@ -23,6 +51,10 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.container .toast.offline{
+    border-color: #FD5D5D;
+
 }
 .toast .content{
     display: flex;
@@ -38,6 +70,9 @@ body{
     justify-content: center;
     border-radius: 50%;
     color: #fff;
+}
+.toast.offline .content .icon{
+    background-color: #FD5D5D;
 }
 .toast .content .details{
     margin-left:  15px;
